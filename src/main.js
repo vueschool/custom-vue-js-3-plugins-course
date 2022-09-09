@@ -1,11 +1,11 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import { myFirstPlugin } from "./myFirstPlugin";
+import { toolTipPlugin } from "./toolTipPlugin";
 
 import "./assets/main.css";
 
 createApp(App)
-  .use(myFirstPlugin, {
+  .use(toolTipPlugin, {
     option1: true,
   })
   .mount("#app");
