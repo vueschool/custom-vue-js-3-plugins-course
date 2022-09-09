@@ -1,13 +1,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import { myFirstPlugin } from "./myFirstPlugin";
 
 import "./assets/main.css";
-
-const myFirstPlugin = {
-  install(app, options) {
-    console.log("Hello plugin", options);
-  },
-};
 
 createApp(App)
   .use(myFirstPlugin, {
