@@ -8,6 +8,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "tippy.js": "^6.3.7",
     "vue": "^3.2.38"
   },
   "devDependencies": {
