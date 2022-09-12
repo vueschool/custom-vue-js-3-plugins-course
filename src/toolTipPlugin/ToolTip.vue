@@ -1,7 +1,7 @@
 <script setup>
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
-import { onMounted, ref, onUpdated } from "vue";
+import { onMounted, ref, onUpdated, onUnmounted } from "vue";
 const props = defineProps({
   text: { type: String, required: true },
 });
@@ -18,6 +18,7 @@ function initTippy() {
 }
 onMounted(initTippy);
 onUpdated(initTippy);
+onUnmounted(() => tippyInstance.destroy());
 </script>
 <template>
   <span ref="tooltip"></span>
