@@ -6,6 +6,6 @@ import "./assets/main.css";
 
 createApp(App)
   .use(toolTipPlugin, {
-    option1: true,
+    placement: "right",
   })
   .mount("#app");

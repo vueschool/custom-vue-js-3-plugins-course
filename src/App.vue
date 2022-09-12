@@ -8,6 +8,10 @@ const tooltipText = ref("Hello world");
   <input type="text" v-model="tooltipText" /> <br />
   <span
     >Hover Over Me
-    <ToolTip :text="tooltipText" :options="{ placement: 'right' }"
+    <ToolTip :text="tooltipText" :options="{ placement: 'bottom' }"
   /></span>
+
+  <br />
+
+  <span>And me <ToolTip :text="tooltipText" /></span>
 </template>
