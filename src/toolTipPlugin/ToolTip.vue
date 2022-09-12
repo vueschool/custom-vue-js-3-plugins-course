@@ -4,6 +4,12 @@ import "tippy.js/dist/tippy.css";
 import { onMounted, ref, onUpdated, onUnmounted } from "vue";
 const props = defineProps({
   text: { type: String, required: true },
+  options: {
+    type: Object,
+    default() {
+      return {};
+    },
+  },
 });
 
 const tooltip = ref(null);
@@ -14,6 +20,7 @@ function initTippy() {
   if (tippyInstance) tippyInstance.destroy();
   tippyInstance = tippy(tooltip.value.parentNode, {
     content: props.text,
+    ...props.options,
   });
 }
 onMounted(initTippy);
