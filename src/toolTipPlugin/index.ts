@@ -2,7 +2,9 @@ import { defineAsyncComponent } from "vue";
 import { defu } from "defu";
 import { hideAll } from "tippy.js";
 export const tooltipOptionsInject = Symbol();
-export function toolTipPlugin(app, options) {
+import type { App } from "vue";
+
+export function toolTipPlugin(app: App, options = {}) {
   options = defu(options, {
     arrow: false,
   });
@@ -14,5 +16,4 @@ export function toolTipPlugin(app, options) {
     "ToolTip",
     defineAsyncComponent(() => import("./ToolTip.vue"))
   );
-  console.log("Hello plugin", options);
 }
