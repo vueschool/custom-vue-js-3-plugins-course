@@ -14,4 +14,8 @@ const tooltipText = ref("Hello world");
   <br />
 
   <span>And me <ToolTip :text="tooltipText" /></span>
+
+  <br />
+
+  <button @click="$hideAllTooltips()">Hide All</button>
 </template>

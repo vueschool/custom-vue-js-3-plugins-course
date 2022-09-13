@@ -7,5 +7,7 @@ import "./assets/main.css";
 createApp(App)
   .use(toolTipPlugin, {
     placement: "right",
+    trigger: "click",
+    hideOnClick: false,
   })
   .mount("#app");
