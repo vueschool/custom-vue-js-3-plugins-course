@@ -2,18 +2,22 @@ import { defineAsyncComponent } from "vue";
 import { defu } from "defu";
 import { hideAll } from "tippy.js";
 export const tooltipOptionsInject = Symbol();
-import type { App } from "vue";
+import type { Props } from "tippy.js";
 
-export function toolTipPlugin(app: App, options = {}) {
-  options = defu(options, {
-    arrow: false,
-  });
+type PluginOptions = Partial<Props>;
 
-  app.config.globalProperties.$hideAllTooltips = hideAll;
+export function createToolTipPlugin(options: PluginOptions) {
+  return (app) => {
+    options = defu(options, {
+      arrow: false,
+    });
 
-  app.provide(tooltipOptionsInject, options);
-  app.component(
-    "ToolTip",
-    defineAsyncComponent(() => import("./ToolTip.vue"))
-  );
+    app.config.globalProperties.$hideAllTooltips = hideAll;
+
+    app.provide(tooltipOptionsInject, options);
+    app.component(
+      "ToolTip",
+      defineAsyncComponent(() => import("./ToolTip.vue"))
+    );
+  };
 }
