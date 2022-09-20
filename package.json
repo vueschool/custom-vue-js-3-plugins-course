@@ -1,5 +1,18 @@
 {
-  "name": "vue-plugins-course",
+  "name": "sweet-vue-tooltip",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/sweet-vue-tooltip.umd.cjs",
+  "module": "./dist/sweet-vue-tooltip.js",
+  "exports": {
+    ".": {
+      "import": "./dist/sweet-vue-tooltip.js",
+      "require": "./dist/sweet-vue-tooltip.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
