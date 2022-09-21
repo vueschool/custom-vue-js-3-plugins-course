@@ -1,6 +1,10 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": [
+    "env.d.ts",
+    "src/toolTipPlugin/**/*",
+    "src/toolTipPlugin/**/*.vue"
+  ],
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",

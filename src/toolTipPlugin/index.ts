@@ -2,12 +2,11 @@ import { defineAsyncComponent } from "vue";
 import { defu } from "defu";
 import { hideAll } from "tippy.js";
 export const tooltipOptionsInject = Symbol();
-import type { Props } from "tippy.js";
+import type { App } from "vue";
+import type { PluginOptions } from "./types";
 
-type PluginOptions = Partial<Props>;
-
-export function createToolTipPlugin(options: PluginOptions) {
-  return (app) => {
+export function createToolTipPlugin(options: PluginOptions = {}) {
+  return (app: App) => {
     options = defu(options, {
       arrow: false,
     });
